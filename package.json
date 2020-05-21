@@ -1,0 +1,23 @@
+{
+  "name": "math-random-nikunj",
+  "version": "1.0.0",
+  "description": "Generate random number between two number",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrNikunjPatel/math-random-nikunj.git"
+  },
+  "keywords": [
+    "random",
+    "number"
+  ],
+  "author": "Nikunj Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrNikunjPatel/math-random-nikunj/issues"
+  },
+  "homepage": "https://github.com/MrNikunjPatel/math-random-nikunj#readme"
+}
