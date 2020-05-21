@@ -7,7 +7,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
