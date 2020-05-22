@@ -1,4 +1,4 @@
-const randomNumber = require("./index.js");
+const randomNumber = require("./src/index.js");
 
 describe("Random number generator", () => {
 
