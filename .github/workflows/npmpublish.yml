@@ -28,8 +28,8 @@ jobs:
           path: dist
       - name: Archive production artifacts
         run: npm publish
-          env:
-            NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   # test:
   #   name: Test before publishing
