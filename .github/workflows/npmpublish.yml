@@ -8,7 +8,7 @@ on:
     types: [created]
 
 jobs:
-  build_test:
+  build_and_test:
     name: Build and Test
     runs-on: ubuntu-latest
     steps:
