@@ -1,6 +1,6 @@
 {
   "name": "@mrnikunjpatel/math-random-nikunj",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "Generate random number between two number",
   "main": "index.js",
   "publishConfig": {
