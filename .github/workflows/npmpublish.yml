@@ -21,6 +21,7 @@ jobs:
 
   build:
     name: Build before publishing
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
