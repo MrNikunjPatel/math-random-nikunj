@@ -8,30 +8,29 @@ on:
     types: [created]
 
 jobs:
-  build_and_test:
-    name: Build and Test
+  build_test_publish:
+    name: Build, Test and Publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
           node-version: 12
-      - name: NPM Install, Build, and Test
+      - name: NPM Install, Build, Test and Publish
         run: |
           npm install
           npm run build
           npm test
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/download-artifact@v1
         with:
           name: dist
           path: dist
-      - name: Download production artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: dist
-          path: dist
-          
+      - name: Archive production artifacts
+        run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
   # test:
   #   name: Test before publishing
   #   needs: build
@@ -60,16 +59,16 @@ jobs:
   #       env:
   #         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
-  publish-gpr:
-    name: Publish package in Github
-    needs: build_and_test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/          
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  # publish-gpr:
+  #   name: Publish package in Github
+  #   needs: build_and_test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #         registry-url: https://npm.pkg.github.com/      
+  #     - run: npm publish
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
