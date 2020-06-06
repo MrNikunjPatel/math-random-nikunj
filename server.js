@@ -10,7 +10,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello World, Lets generate a random number ' + randomNoGenerator(1,10));
+  res.send('Lets generate a random number ' + randomNoGenerator(1,10));
 });
 
 app.listen(PORT, HOST);
