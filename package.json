@@ -2,7 +2,7 @@
   "name": "@mrnikunjpatel/math-random-nikunj",
   "version": "1.0.36",
   "description": "Generate random number between two number",
-  "main": "index.js",
+  "main": "server.js",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -30,5 +30,8 @@
     "jest": "^26.0.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
