@@ -1,0 +1,22 @@
+name: Docker CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to Docker
+      env:
+        Docker_Username:  ${{secrets.DOCKER_USERNAME}}
+        Docker_Password:  ${{secrets.DOCKER_PASSWORD}}
+      run: docker login -u $Docker_Username -p $Docker_Password
+    - name: Build Docker
+      run: docker build -t mrnikunjpatel/math-random-image .
+
+    - name: Push to Docker
+      run: docker push mrnikunjpatel/math-random-image:v1
