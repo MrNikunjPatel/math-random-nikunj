@@ -19,4 +19,4 @@ jobs:
       run: docker build -t mrnikunjpatel/math-random-image:v1 .
 
     - name: Push to Docker
-      run: docker push
+      run: docker push mrnikunjpatel/math-random-image:v1
