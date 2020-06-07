@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy to CDN
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  push_to_cdn:    
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup NodeJs
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: NPM Install
+      run: npm ci --silent
+    - name: NPM Build
+      run: npm run build
+    - name: Publish to CDN
+      uses: ./.github/actions
+      env:
+        BUNDLE_LOCATION: dist
+        BUCKET_NAME: math-random
+        AWS_ACCESS_KEY: ${{secrets.AWS_ACCESS_KEY}}
+        AWS_SECRET_KEY: ${{secrets.AWS_SECRET_KEY}}
