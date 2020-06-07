@@ -3,7 +3,7 @@ echo "Replacing ${GITHUB_REF}"
 
 TAG=${GITHUB_REF##*/}
 
-if [ -z "$TAG" ] : then
+if [ -z "$TAG" ]; then
     echo "No tag found"
     exit 1
 fi
