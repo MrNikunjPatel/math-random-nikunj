@@ -8,6 +8,11 @@ if [ -z "$TAG" ]; then
     exit 1
 fi
 
+if [ ! -d "$BUNDLE_LOCATION" ]; then
+    echo "Directory dist DOES NOT exists."
+    exit 1
+fi
+
 export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
 export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
 
