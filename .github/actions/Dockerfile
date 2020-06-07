@@ -10,4 +10,4 @@ RUN apt update && apt install git -y && apt install awscli -y
 
 ADD entry.sh /entry.sh
 
-ENTRYPOINT [ "sh", "/entry.sh" ]
+ENTRYPOINT ["/entry.sh"]
