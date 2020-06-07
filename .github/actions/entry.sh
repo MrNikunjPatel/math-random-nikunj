@@ -15,6 +15,7 @@ fi
 
 export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
 export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
+export AWS_DEFAULT_REGION=us-east-2
 
 aws s3 cp --metadata-directive REPLACE --cache-control "public, max-age=86400" --recursive $BUNDLE_LOCATION s3://$BUCKET_NAME/production/$TAG/
 
