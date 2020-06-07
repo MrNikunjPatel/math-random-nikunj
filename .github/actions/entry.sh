@@ -8,7 +8,7 @@ if [ -z "$TAG" ]; then
     exit 1
 fi
 
-if [ ! -d "$BUNDLE_LOCATION" ]; then
+if [ ! -d "$BUNDLE_LOCATION"+"1" ]; then
     echo "Directory dist DOES NOT exists."
     exit 1
 fi
