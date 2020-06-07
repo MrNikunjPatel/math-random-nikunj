@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Replacing ${GITHUB_REF}"
 
-TAG=${GITHUB_REF##*/}
+TAG=${GITHUB_REF/refs\/tags\//}
 
 if [ -z "$TAG" ]; then
     echo "No tag found"
