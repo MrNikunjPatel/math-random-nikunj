@@ -1,4 +1,4 @@
-#!/bin/dash
+#!/bin/bash
 echo "Replacing ${GITHUB_REF}"
 
 # TAG=${GITHUB_REF/refs\/tags\//}
